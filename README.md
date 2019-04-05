@@ -28,7 +28,9 @@ To give the analogy with what occurs within an operating system, we could say th
 
 > However, unlike what happens within an operating system, the Docker daemon that orchestrates the container executions keeps data about all executions.
 
-A container differs from a virtual machine (VM), which encapsulates an entire OS with the executable code atop an abstraction layer from the physical hardware resources.
+A container differs from a virtual machine (VM), which encapsulates an entire OS with the executable code atop an abstraction layer from the physical hardware resources. In particular, contrary to VM, **Docker containers do not have a functioning _init_ system**. 
+
+> The lack of init process can lead to serious trouble, as explained [here](https://medium.com/@nagarwal/an-init-system-inside-the-docker-container-3821ee233f4b).
 
 > Please note that a container can use a persistent storage (typically, a directory within the host file system), but this persistent storage is not part of the container itself (the container accesses the persistent storage through an intermediary).
 
@@ -63,6 +65,7 @@ It contains:
 * [Container](container.md)
 * [Volumes](volume.md)
 * [Formating outputs](format.md)
+* [Network and services](network.md)
 * [Tips and tricks](tips.md)
 * [Troubleshooting](troubleshooting.md)
 
@@ -70,6 +73,7 @@ It contains:
 
 * [Docker Hub](https://hub.docker.com/): catalog of images.
 * [Docker image](https://searchitoperations.techtarget.com/definition/Docker-image): good introduction to Docker.
+* [An Init System inside the Docker Container](https://medium.com/@nagarwal/an-init-system-inside-the-docker-container-3821ee233f4b)
 
 
 

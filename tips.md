@@ -36,8 +36,6 @@ Print a container configuration:
              Volumes: map[/mnt/vol1:map[] /mnt/vol2:map[]]
           WorkingDir: 
 
-
-
 Get the "short value" of a "long ID":
 
     $ long_id="fdc63c37dd5c08df912f0ff28f4cf69f063e51529bea975615f460e99ccf3f9f"
