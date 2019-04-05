@@ -4,7 +4,7 @@
 
 ### Image
 
-A **Docker image** is a file, comprised of multiple layers, used to execute code in a Docker container.
+A _Docker image_ is a file, comprised of multiple layers, used to execute code in a Docker container.
 
 A Docker image is the result of a [build](https://docs.docker.com/engine/reference/commandline/build/) (defined by a Dockerfile). The build process takes:
 
@@ -17,15 +17,20 @@ A Docker image is the result of a [build](https://docs.docker.com/engine/referen
 
 ### Container
 
-From a functional perspective, a Docker container is an _executable image_.
+From a functional perspective, a _Docker container_ is a _preconfigured executable image_.
 
-Usually a container is created when an image is _executed_: `docker run...`. However, a container can be created before being executed: `docker create...`. A container can also be restarted after its execution ended: `docker restart...`.
+Usually a container is created when an image is _executed_: `docker run...`. However, a container can be created before being executed: `docker create...`. A container can also be restarted (even while it is executing): `docker restart...`.
 
-The Docker daemon keeps a set of properties for all containers. These properties can be inspected: `docker container inspect...`.
+To give the analogy with what occurs within an operating system, we could say that:
+
+* the image is an executable file.
+* the container is an executable file (an image) _along with its configuration_.
+
+> However, unlike what happens within an operating system, the Docker daemon that orchestrates the container executions keeps data about all executions.
 
 A container differs from a virtual machine (VM), which encapsulates an entire OS with the executable code atop an abstraction layer from the physical hardware resources.
 
-> Please note that a container can use a persistent storage (typically, a file system), but this persistent storage is not part of the container itself (the container accesses the persistent storage through an intermediary).
+> Please note that a container can use a persistent storage (typically, a directory within the host file system), but this persistent storage is not part of the container itself (the container accesses the persistent storage through an intermediary).
 
 ### Volume
 

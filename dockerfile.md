@@ -4,17 +4,19 @@
 
 Help:
 
-    sudo docker help build
+    docker help build
 
 Give a name to the image:
 
-    sudo docker build [--tag <name>] .
+    docker build [--tag <name>] .
+
+> See [Doc](https://docs.docker.com/engine/reference/commandline/build/).
 
 Example:
 
-    $ sudo docker build --tag my_image .
+    $ docker build --tag my_image .
 
-    $ sudo docker images
+    $ docker images
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
     my_image            latest              3d963fe5c637        11 minutes ago      222MB
 
