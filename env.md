@@ -3,7 +3,18 @@
 
 ## Description
 
-`ENV`: define an environment variable. See [Environment replacement](https://docs.docker.com/engine/reference/builder/#Environment%20replacement). **Please note that these environment variables cannot be used with all Dockerfile commands**. In particular, it cannot be used with commands such as `ENTRYPOINT`, `RUN` or `CMD` (for example).
+`ENV`: define an environment variable. See [Environment replacement](https://docs.docker.com/engine/reference/builder/#Environment%20replacement). **Please note that these environment variables cannot be used with all Dockerfile commands**. In particular, it cannot be used with commands such as **`ENTRYPOINT`**, **`RUN`** or **`CMD`** (for example).
+
+Please note that the "exec" version of the command RUN 
+
+FROM debian
+RUN ["/bin/echo", "exec: $HOME"]
+RUN ["/bin/bash", "-c", "echo \"bash: ${HOME}\""]
+ENTRYPOINT ["/bin/bash"]
+
+docker build -t env_test .
+docker run -it --rm  env_test
+
 
 ## Example
 
