@@ -100,6 +100,12 @@ Useful options:
 
     docker container ls --all
 
+Get only the ID:
+
+     docker container ls --all --format  "{{.ID}}"
+
+> See the list of variables to use with `--format`: [Format the output (--format)](https://docs.docker.com/engine/reference/commandline/ps/#format)
+
 ## Inspect a container
 
     docker container inspect <container ID>
@@ -107,4 +113,12 @@ Useful options:
 ## Attach a container to the terminal
 
     docker attach <container ID>
+
+## Delete a container
+
+    docker rm <container ID>
+
+## Delete all container
+
+    docker rm $(docker container ls --all --format  "{{.ID}}")
 
